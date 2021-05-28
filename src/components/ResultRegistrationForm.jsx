@@ -18,7 +18,7 @@ export default function ResultRegistrationForm({setParticipantData, setIsRegiste
       }
 
     return (
-        <form onSubmit={handleSave}>
+        <form className="registration-form" onSubmit={handleSave}>
             <h4>Participant</h4>
             <p>{participantData.firstname} {participantData.lastname}</p>
             <p>id: {participantData.id}</p>

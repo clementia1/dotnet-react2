@@ -8,7 +8,7 @@ function RegistrationContainer() {
     const [participantData, setParticipantData] = useState({});
 
     return (
-        <div>
+        <div className="registration-container">
             {!isRegistered ? 
                 <UserRegistrationForm setIsRegistered={setIsRegistered} setParticipantData={setParticipantData}/>
                 : <ResultRegistrationForm setIsRegistered={setIsRegistered} setParticipantData={setParticipantData} participantData={participantData}/>

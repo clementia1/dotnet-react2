@@ -5,7 +5,7 @@ function ParticipantsContainer() {
     const participants = useSelector(state => state.participants);
 
     return (
-      <div>
+      <div className="participants-container">
         {participants.map(participant => {
             return <ParticipantCard participant={participant}/>
         })}
