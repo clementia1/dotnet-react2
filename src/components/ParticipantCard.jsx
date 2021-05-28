@@ -1,3 +1,5 @@
+import {timeFromSeconds} from '../helpers';
+
 export default function ParticipantCard(props) {
 
     return (
@@ -8,7 +10,7 @@ export default function ParticipantCard(props) {
                     <p className="user-info">id: {props.participant.id}</p>
                 </div>
                 <div className="user-info-time">
-                    <p>Time: {props.participant.time}</p> 
+                    <p>Time: {timeFromSeconds(props.participant.time)}</p> 
                 </div>
             </div>
         </div>
