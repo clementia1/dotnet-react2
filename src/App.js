@@ -1,8 +1,11 @@
 import logo from './logo.svg';
 import { timeFromSeconds } from './helpers';
 import './App.css';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const users = useSelector(participants);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +19,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {timeFromSeconds(147)}
+          {users.map(item => {
+            return <span>{item}</span>
+          })}
         </a>
       </header>
     </div>
