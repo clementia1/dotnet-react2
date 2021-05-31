@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import ParticipantsContainer from './containers/ParticipantsContainer';
-import RegistrationContainer from './containers/RegistrationContainer';
+import Participants from './containers/Participants';
+import ParticipantRegistration from './containers/ParticipantRegistration';
 import './App.css';
 
 
@@ -9,8 +9,8 @@ function App() {
 
   return (
     <div className="App">
-      <ParticipantsContainer/>
-      <RegistrationContainer/>
+      <Participants/>
+      <ParticipantRegistration/>
     </div>
   );
 }

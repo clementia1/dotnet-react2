@@ -1,6 +1,6 @@
 import {timeFromSeconds} from '../helpers';
 
-export default function ParticipantCard(props) {
+export default function СompetitionCard(props) {
 
     return (
         <div className="card">

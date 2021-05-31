@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import UserRegistrationForm from '../components/UserRegistrationForm';
-import ResultRegistrationForm from '../components/ResultRegistrationForm';
+import UserBioForm from '../components/UserBioForm';
+import UserResultForm from '../components/UserResultForm';
 
 function RegistrationContainer() {
     const [isRegistered, setIsRegistered] = useState(false);
@@ -10,8 +10,8 @@ function RegistrationContainer() {
     return (
         <div className="registration-container">
             {!isRegistered ? 
-                <UserRegistrationForm setIsRegistered={setIsRegistered} setParticipantData={setParticipantData}/>
-                : <ResultRegistrationForm setIsRegistered={setIsRegistered} setParticipantData={setParticipantData} participantData={participantData}/>
+                <UserBioForm setIsRegistered={setIsRegistered} setParticipantData={setParticipantData}/>
+                : <UserResultForm setIsRegistered={setIsRegistered} setParticipantData={setParticipantData} participantData={participantData}/>
             }
         </div>
     );

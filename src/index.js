@@ -5,7 +5,9 @@ import store from './store';
 import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import '@fontsource/montserrat';
+import '@fontsource/montserrat/300.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
 
 ReactDOM.render(
   <React.StrictMode>

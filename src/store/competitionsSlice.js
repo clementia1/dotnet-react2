@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const participantsSlice = createSlice({
-    name: 'participants',
+const competitionsSlice = createSlice({
+    name: 'competitions',
     initialState: [],
     reducers: {
-        addParticipant: {
+        addCompetition: {
             reducer: (state, action) => {
                 state.push(action.payload)
             },
         },
-        deleteParticipant: {
+        deleteCompetition: {
             reducer: (state, action) => {
                 state.filter(item => item.id != action.payload.id)
             },
@@ -17,5 +17,5 @@ const participantsSlice = createSlice({
     }
 })
 
-export const { addParticipant, deleteParticipant } = participantsSlice.actions;
-export default participantsSlice.reducer;
+export const { addCompetition, deleteCompetition } = competitionsSlice.actions;
+export default competitionsSlice.reducer;
