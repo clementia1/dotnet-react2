@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import UserBioForm from '../components/UserBioForm';
 import UserResultForm from '../components/UserResultForm';
 
-function RegistrationContainer() {
+function ParticipantRegistration() {
     const [isRegistered, setIsRegistered] = useState(false);
     const [participantData, setParticipantData] = useState({});
 
@@ -17,4 +17,4 @@ function RegistrationContainer() {
     );
 }
 
-export default RegistrationContainer;
+export default ParticipantRegistration;

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import ParticipantCard from '../components/ParticipantCard';
 
-function ParticipantsContainer() {
+function Participants() {
     const participants = useSelector(state => state.participants);
 
     return (
@@ -13,4 +13,4 @@ function ParticipantsContainer() {
     );
 }
 
-export default ParticipantsContainer;
+export default Participants;
