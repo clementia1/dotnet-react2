@@ -35,7 +35,7 @@ export default function UserRegistrationForm({setParticipantData, setIsRegistere
                 onChange={(e) => setLastname(e.target.value)}/>
             <Button 
                 type="submit"
-                text="Register participant"/>
+                text="Register"/>
         </form>
     )
 }
