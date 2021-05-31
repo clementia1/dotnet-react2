@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux';
-import ParticipantCard from '../components/ParticipantCard';
+import СompetitionCard from '../components/cards/СompetitionCard';
 
 function Сompetitions() {
-    const participants = useSelector(state => state.participants);
+    const [selectedCompetitionId, setSelectedCompetitionId] = ("");
+    const competitions = useSelector(state => state.competitions); 
 
     return (
-      <div className="participants-container">
-        {participants.map(participant => {
-            return <ParticipantCard participant={participant}/>
+      <div className="competitions-container">
+        {competitions.map(competition => {
+            return <СompetitionCard competition={competition}/>
         })}
       </div>
     );

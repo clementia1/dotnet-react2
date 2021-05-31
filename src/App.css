@@ -56,10 +56,10 @@ body {
     }
 }
 
-.participants-container {
+.participants-container, .competitions-container {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 65%;
+    flex-basis: 85%;
     padding-top: 32px;
 }
 
@@ -74,6 +74,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .user-list {
@@ -96,33 +97,28 @@ body {
     box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
 }
 
-.user-picture-container {
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-}
-
-.user-picture {
-    border-radius: 50%;
-}
-
-.user-info-container {
-    min-width: 100px;
+.card-content {
+    width: 100%;
     padding: 0 16px;
     text-align: left;
 }
 
-.user-name {
+.card-header {
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 16px;
     font-weight: 600;
 }
 
-.user-info {
+.card-subtitle {
     color: rgb(119, 114, 96);
     font-size: 0.9rem;
 }
 
-.user-info,
-.user-name {
+.card-title,
+.card-subtitle {
     margin: 6px 0;
 }
 

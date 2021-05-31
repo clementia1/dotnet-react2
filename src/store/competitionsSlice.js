@@ -6,7 +6,13 @@ const competitionsSlice = createSlice({
     reducers: {
         addCompetition: {
             reducer: (state, action) => {
-                state.push(action.payload)
+                state.push({
+                    name: action.payload.name,
+                    id: action.payload.id,
+                    status: "active",
+                    winner: {},
+                    participants: []
+                })
             },
         },
         deleteCompetition: {
@@ -14,8 +20,37 @@ const competitionsSlice = createSlice({
                 state.filter(item => item.id != action.payload.id)
             },
         },
+        setWinner: {
+            reducer: (state, action) => {
+                state.winner = Object.assign(action.payload);
+            },
+        },
+        finishCompetition: {
+            reducer: (state) => {
+                state.status = "finished";
+            },
+        },
+        addParticipant: {
+            reducer: (state, action) => {
+                let competition = state.find(competition => competition.id == action.payload.id);
+                competition.participants.push(action.payload.participant);
+            },
+        },
+        deleteParticipant: {
+            reducer: (state, action) => {
+                let competition = state.find(competition => competition.id == action.payload.competitionId);
+                competition.filter(item => item.id != action.payload.participantId)
+            },
+        },
     }
 })
 
-export const { addCompetition, deleteCompetition } = competitionsSlice.actions;
+export const {
+    addCompetition,
+    deleteCompetition,
+    addParticipant,
+    deleteParticipant,
+    setWinner,
+    finishCompetition
+} = competitionsSlice.actions;
 export default competitionsSlice.reducer;
