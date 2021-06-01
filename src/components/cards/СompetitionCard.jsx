@@ -12,7 +12,7 @@ export default function СompetitionCard(props) {
                     <p className="card-info">Status: {props.competition.status}</p>
                 </div>
                 <div className="card-text">
-                    {props.competition.winner.id ? <p>Winner: {props.competition.winner.firstname} {props.competition.winner.lastname}</p> : null}
+                    {props.competition.winner?.id ? <p>Winner: {props.competition.winner.firstname} {props.competition.winner.lastname}</p> : null}
                     <p>Participants: {props.competition.participants.length}</p>
                     <Link to={`competition/${props.competition.id}`}><Button text="show" style={{margin: 0, width: "100%"}}/></Link>
                 </div>
