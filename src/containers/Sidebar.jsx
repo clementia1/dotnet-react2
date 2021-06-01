@@ -1,5 +1,4 @@
-import {Link, useRouteMatch, useLocation, useParams} from 'react-router-dom';
-import { matchPath } from 'react-router';
+import {Link, useRouteMatch, useLocation} from 'react-router-dom';
 
 const rootNavigation = [{
     pathname: "",
@@ -51,7 +50,7 @@ function Sidebar() {
     console.log(match)
     return (
         <aside className="sidebar">
-            <Navigation links={pathname === "/" || pathname === "/new" ? rootNavigation : competitionNavigation(match?.params?.id)}/>
+            <Navigation links={match && pathname !== "/new" ? competitionNavigation(match?.params?.id) : rootNavigation}/>
         </aside>
     )
 }
