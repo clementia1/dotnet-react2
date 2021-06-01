@@ -30,7 +30,7 @@ function CompetitionForm() {
             {isSubmitted
                 ? <><h2>Contest added!</h2><Button text="New" onClick={handleReset}/></> 
                 : <><h2>Create contest</h2>
-                    <label htmlFor="contest-name" className="form-label">Contect name</label>
+                    <label htmlFor="contest-name" className="form-label">Contest name</label>
                     <Input
                         type="text"
                         id="contest-name"
