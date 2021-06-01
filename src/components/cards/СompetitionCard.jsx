@@ -14,7 +14,7 @@ export default function СompetitionCard(props) {
                 <div className="card-text">
                     {props.competition.winner.name ? <p>Winner: {props.competition.winner.name}</p> : null}
                     <p>Participants: {props.competition.participants.length}</p>
-                    <Link to={props.competition.id}><Button text="show" style={{margin: 0, width: "100%"}}/></Link>
+                    <Link to={`competition/${props.competition.id}`}><Button text="show" style={{margin: 0, width: "100%"}}/></Link>
                 </div>
             </div>
         </div>

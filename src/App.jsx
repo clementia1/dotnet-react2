@@ -19,10 +19,10 @@ function App() {
           <Route path="/new">
             <CompetitionForm />
           </Route>
-          <Route exact path="/:id">
+          <Route exact path="/competition/:id">
             <Competition />
           </Route>
-          <Route path="/:id/new">
+          <Route path="/competition/:id/new">
             <ParticipantRegistration />
           </Route>
         </Switch>

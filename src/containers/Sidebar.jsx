@@ -13,10 +13,10 @@ const competitionNavigation = (id) => {
         pathname: "",
         title: "< Back"
     },{
-        pathname: `${id}`,
+        pathname: `competition/${id}`,
         title: "Participants"
     }, {
-        pathname: `${id}/new`,
+        pathname: `competition/${id}/new`,
         title: "Add participant"
     }];
 }
@@ -41,14 +41,14 @@ function Sidebar() {
     let { pathname } = useLocation();
       
     let match = useRouteMatch({
-        path: "/:id",
+        path: "/competition/:id",
         strict: true,
         sensitive: true
       });
 
     return (
         <aside className="sidebar">
-            <Navigation links={match && pathname !== "/new" ? competitionNavigation(match?.params?.id) : rootNavigation}/>
+            <Navigation links={match ? competitionNavigation(match?.params?.id) : rootNavigation}/>
         </aside>
     )
 }
