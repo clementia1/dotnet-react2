@@ -22,12 +22,14 @@ const competitionsSlice = createSlice({
         },
         setWinner: {
             reducer: (state, action) => {
-                state.winner = Object.assign(action.payload);
+                let competition = state.find(competition => competition.id === action.payload.competitionId);
+                competition.winner = action.payload.winner;
             },
         },
         finishCompetition: {
-            reducer: (state) => {
-                state.status = "finished";
+            reducer: (state, action) => {
+                let competition = state.find(competition => competition.id === action.payload.competitionId);
+                competition.status = "finished";
             },
         },
         addParticipant: {

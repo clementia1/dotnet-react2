@@ -10,7 +10,9 @@ function Сompetition() {
         <div className="competition">
             <h2>{competiton.name}</h2>
             <h3>Participants</h3>
-            <Participants 
+            <Participants
+                status={competiton.status}
+                winner={competiton.winner}
                 participants={competiton.participants} 
                 competitionId={params.id}/>
         </div>

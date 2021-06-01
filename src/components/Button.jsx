@@ -2,7 +2,7 @@ export default function Button(props) {
 
     return (
         <button
-            className="btn"
+            className={props.className ? props.className : "btn"}
             style={props.style}
             type={props.type}
             name={props.name}
