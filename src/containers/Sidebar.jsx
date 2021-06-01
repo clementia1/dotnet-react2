@@ -39,7 +39,6 @@ function Navigation({links}) {
 
 function Sidebar() {
     let { pathname } = useLocation();
-    let pathWithoutSlash = pathname.replace(/^\//, "");
       
     let match = useRouteMatch({
         path: "/:id",
@@ -47,7 +46,6 @@ function Sidebar() {
         sensitive: true
       });
 
-    console.log(match)
     return (
         <aside className="sidebar">
             <Navigation links={match && pathname !== "/new" ? competitionNavigation(match?.params?.id) : rootNavigation}/>
