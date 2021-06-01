@@ -1,13 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {nanoid} from 'nanoid';
-import Button from './Button';
-import Input from './Input';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
 
 export default function UserRegistrationForm({setParticipantData, setIsRegistered}) {
-    const [firstname,
-        setFirstname] = useState('');
-    const [lastname,
-        setLastname] = useState('');
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
 
     const handleRegister = (e) => {
         e.preventDefault();

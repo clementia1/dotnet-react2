@@ -1,7 +1,8 @@
-import { useSelector } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import Competitions from './containers/Сompetitions';
 import Competition from './containers/Сompetition';
+import CompetitionForm from './containers/forms/CompetitionForm';
+import ParticipantRegistration from './containers/ParticipantRegistration';
 import Sidebar from './containers/Sidebar';
 import './App.css';
 
@@ -16,10 +17,13 @@ function App() {
             <Competitions />
           </Route>
           <Route path="/new">
-            <Competitions />
+            <CompetitionForm />
           </Route>
-          <Route path="/:id">
+          <Route exact path="/:id">
             <Competition />
+          </Route>
+          <Route path="/:id/new">
+            <ParticipantRegistration />
           </Route>
         </Switch>
       </div>

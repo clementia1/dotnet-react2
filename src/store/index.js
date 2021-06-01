@@ -1,5 +1,4 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import participantsReducer from './participantsSlice';
+import { configureStore } from '@reduxjs/toolkit';
 import competitionsReducer from './competitionsSlice';
 
 

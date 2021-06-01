@@ -4,9 +4,17 @@ import Participants from './Participants';
 
 function Сompetition() {
     const params = useParams();
-    const participants = useSelector(state => state.competitions.id == params.id).participants;
+    const competiton = useSelector(state => state.competitions.find(item => item.id === params.id));
 
-    return (<Participants participants={participants}/>);
+    return (
+        <div className="competition">
+            <h2>{competiton.name}</h2>
+            <h3>Participants</h3>
+            <Participants 
+                participants={competiton.participants} 
+                competitionId={params.id}/>
+        </div>
+    );
 }
 
 export default Сompetition;

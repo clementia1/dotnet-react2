@@ -1,15 +1,19 @@
-import { useSelector } from 'react-redux';
-import ParticipantCard from '../components/ParticipantCard';
+import ParticipantCard from '../components/cards/ParticipantCard';
+import {useDispatch} from 'react-redux';
+import {deleteParticipant} from '../store/competitionsSlice';
 
-function Participants() {
-    const participants = useSelector(state => state.participants);
+function Participants({participants, competitionId}) {
+    const dispatch = useDispatch();    
 
     return (
-      <div className="participants-container">
-        {participants.map(participant => {
-            return <ParticipantCard participant={participant}/>
-        })}
-      </div>
+        <div className="participants-container">
+            {participants.map((participant, i) => {
+                return (<ParticipantCard
+                    key={i}
+                    participant={participant}
+                    onClick={() => dispatch(deleteParticipant({participantId: participant.id, competitionId}))}/>)
+            })}
+        </div>
     );
 }
 

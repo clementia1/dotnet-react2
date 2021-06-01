@@ -17,7 +17,7 @@ const competitionsSlice = createSlice({
         },
         deleteCompetition: {
             reducer: (state, action) => {
-                state.filter(item => item.id != action.payload.id)
+                state.filter(item => item.id !== action.payload.id)
             },
         },
         setWinner: {
@@ -32,14 +32,14 @@ const competitionsSlice = createSlice({
         },
         addParticipant: {
             reducer: (state, action) => {
-                let competition = state.find(competition => competition.id == action.payload.id);
-                competition.participants.push(action.payload.participant);
+                let competition = state.find(competition => competition.id === action.payload.competitionId);
+                competition.participants.push(action.payload.participantData);
             },
         },
         deleteParticipant: {
             reducer: (state, action) => {
-                let competition = state.find(competition => competition.id == action.payload.competitionId);
-                competition.filter(item => item.id != action.payload.participantId)
+                let competition = state.find(competition => competition.id === action.payload.competitionId);
+                competition.participants = competition.participants.filter(item => item.id !== action.payload.participantId)
             },
         },
     }
