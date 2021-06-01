@@ -13,8 +13,7 @@ function CompetitionForm() {
     const handleCreate = (e) => {
         e.preventDefault();
 
-        if (name.length == 0) 
-            return;
+        if (name.length == 0) return;
         
         dispatch(addCompetition({name, id: nanoid(10)}));
         setIsSubmitted(true);
