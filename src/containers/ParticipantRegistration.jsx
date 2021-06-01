@@ -11,8 +11,9 @@ function ParticipantRegistration() {
     const [isRegistered, setIsRegistered] = useState(false);
     const [participantData, setParticipantData] = useState({});
 
-    const handleRegister = (e) => {
+    const handleRegister = (e, time) => {
         e.preventDefault();
+        participantData.time = time;
         dispatch(addParticipant({participantData, competitionId: params.id}));
         setIsRegistered(false);
     }
